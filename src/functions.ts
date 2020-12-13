@@ -14,15 +14,13 @@ export const returnExpression = (expression: string): string => {
     if (expression.slice(-1) === '%') {
         return String(eval(expression
             .replace(new RegExp('%', 'g'), '/100')
-            .replace('×', '*')
-            .replace('÷', '/')))
+            .replace(new RegExp('×','g'), '*')
+            .replace(new RegExp('÷', 'g'), '/')))
     }
-    else {
-        return  String(eval(expression
-            .replace('×', '*')
-            .replace(new RegExp('%', 'g'), '/100*')
-            .replace('÷', '/')))
-    }
+    return  String(eval(expression
+        .replace(new RegExp('×','g'), '*')
+        .replace(new RegExp('%', 'g'), '/100*')
+        .replace(new RegExp('÷', 'g'), '/')))
 }
 
 export const isPercentage = (expression: string): boolean | undefined => {

@@ -48,6 +48,7 @@ class App extends React.Component<any, state>{
     }
 
     render() {
+        console.log(eval('9*9*9*9*9*9*9'))
         return (
             <div className='wrapper'>
                 <Monitor
