@@ -1,0 +1,94 @@
+.keyboard {
+  display: flex;
+  height: 500px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.keyboard-left-section {
+  display: flex;
+  flex-wrap: wrap;
+  color: #FFFFFF;
+  font-size: 28px;
+
+  &__button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 65px;
+    height: 65px;
+    border: none;
+    border-radius: 50%;
+    background-color: #333333;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  &__button:active {
+    background-color: red;
+  }
+
+  &__zero {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 75px;
+    max-height: 65px;
+    flex-grow: 2;
+    background-color: #333333;
+    border-radius: 45px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-left: 20px;
+    cursor:pointer;
+  }
+}
+
+.keyboard-right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #FFFFFF;
+  font-size: 28px;
+  margin-left: 10px;
+
+  &__button:last-child {
+    margin-bottom: 8px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 65px;
+    max-height: 65px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ff9a0a;
+    margin-right: 10px;
+    cursor: pointer
+  }
+
+  &__button:active {
+    background-color: green;
+  }
+}
+
+.little {
+  font-size: 30px;
+  transition: all 0.2s ease;
+}
+
+.point {
+  max-width: 70px;
+  margin: 0;
+}
+
+.silver {
+  background-color: #a5a5a5;
+}

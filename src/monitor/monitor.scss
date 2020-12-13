@@ -1,0 +1,17 @@
+.monitor {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 200px;
+}
+
+.monitor-expression {
+  font-size: 62px;
+  color: #FFFFFF;
+  text-align: end;
+}
+
+.monitor-result {
+  color: #16a0f0;
+}
