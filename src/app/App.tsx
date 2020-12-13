@@ -18,19 +18,19 @@ class App extends React.Component<any, state>{
         }
     }
 
-    plusMr = (expression: string) => {
+    plusMr = (expression: string): void => {
         this.setState({mr: returnExpression(expression)})
     }
 
-    minusMr = (expression: string) => {
+    minusMr = (expression: string): void => {
         this.setState({mr: String(+this.state.mr - +returnExpression(expression))})
     }
 
-    clearMr = () => {
+    clearMr = (): void => {
         this.setState({mr: '0'})
     }
 
-    changeExpression = (count: string) => {
+    changeExpression = (count: string): void => {
         this.setState({
             expression: this.state.expression === '0'
                 ? count

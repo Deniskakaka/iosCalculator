@@ -11,7 +11,7 @@ interface props {
 
 class Keyboard extends React.Component<props, any> {
 
-    changeExpression = (event: any) => {
+    changeExpression = (event: any): void => {
         if (event.target.className.includes('number') && check(this.props.expression, event.target.innerHTML)) {
                 this.props.setExpression(event.target.innerHTML)
         }
@@ -44,7 +44,7 @@ class Keyboard extends React.Component<props, any> {
         }
     }
 
-    changeResult = (event: any) => {
+    changeResult = (event: any): void | null => {
         if (event.target.className === 'keyboard-right-section') {
             return null
         }
