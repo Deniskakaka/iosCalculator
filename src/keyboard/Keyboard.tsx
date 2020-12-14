@@ -11,7 +11,7 @@ interface props {
 
 class Keyboard extends React.Component<props, any> {
 
-    changeExpression = (event: any): void => {
+    leftSectionFunctional = (event: any): void => {
         if (event.target.className.includes('number') && check(this.props.expression, event.target.innerHTML)) {
                 this.props.setExpression(event.target.innerHTML)
         }
@@ -40,8 +40,7 @@ class Keyboard extends React.Component<props, any> {
         }
     }
 
-    changeResult = (event: any): void | null => {
-        if (event.target.className === 'keyboard-right-section') return null
+    rightSectionFunctional = (event: any): void | null => {
         if(event.target.className.includes('equal')) {
             this.props.setExpression('equal')
         }
@@ -57,13 +56,13 @@ class Keyboard extends React.Component<props, any> {
     render() {
         return (
             <section className='keyboard'>
-                <div className='keyboard-left-section' onClick={() => this.changeExpression(event)}>
+                <div className='keyboard-left-section' onClick={() => this.leftSectionFunctional(event)}>
                     <div className='keyboard-left-section__button silver ac'>AC</div>
                     <div className='keyboard-left-section__button silver plus-minus'>
-                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/plus-minus.png" className='plus-minus'/>
+                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/plus-minus.png" alt='plus-minus' className='plus-minus'/>
                     </div>
                     <div className='keyboard-left-section__button silver percentage'>
-                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/percentage.png" className='percentage'/>
+                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/percentage.png" alt='percentage' className='percentage'/>
                     </div>
                     <div className='keyboard-left-section__button mc'>mc</div>
                     <div className='keyboard-left-section__button mr'>mr</div>
@@ -80,22 +79,22 @@ class Keyboard extends React.Component<props, any> {
                     <div className='keyboard-left-section__zero number'>0</div>
                     <div className='keyboard-left-section__button point'>.</div>
                 </div>
-                <div className='keyboard-right-section' onClick={() => this.changeResult(event)}>
+                <div className='keyboard-right-section' onClick={() => this.rightSectionFunctional(event)}>
                     <div className='keyboard-right-section__button delete'>
-                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/divide.png" className='delete'/>
+                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/divide.png" alt='divide' className='delete'/>
                     </div>
                     <div className='keyboard-right-section__button m+'>m +</div>
                     <div className='keyboard-right-section__button multiply'>
-                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/multiply.png" className='multiply'/>
+                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/multiply.png" alt='multiply' className='multiply'/>
                     </div>
                     <div className='keyboard-right-section__button minus'>
-                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/minus-math.png" className='minus'/>
+                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/minus-math.png" alt='minus' className='minus'/>
                     </div>
                     <div className='keyboard-right-section__button plus'>
-                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/plus-math.png" className='plus'/>
+                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/plus-math.png" alt='plus' className='plus'/>
                     </div>
                     <div className='keyboard-right-section__button equal'>
-                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/equal-sign.png" className='equal'/>
+                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/equal-sign.png" alt='equal' className='equal'/>
                     </div>
                 </div>
             </section>
