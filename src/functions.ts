@@ -27,3 +27,12 @@ export const isPercentage = (expression: string): boolean | undefined => {
     if (!isNaN(+expression.slice(-1)) || expression.slice(-1) === '%') return true
     if (!isNaN(+expression.slice(-1)) && expression.slice(-1) !== '%') return false
 }
+
+export const isPoint = (expression: string): boolean => {
+   let point = expression.match(/\d+\.\d+/g);
+   if(point !== null) {
+       if (point[point.length - 1].slice(-2) === expression.slice(-2)) return false
+       else return true
+   }
+    else return true
+}

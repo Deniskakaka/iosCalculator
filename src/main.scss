@@ -1,10 +1,16 @@
 @import './monitor/monitor.scss';
 @import "./keyboard/keyboard.scss";
 
+body {
+  padding: 0;
+  margin: 0;
+}
+
 .wrapper {
   margin: auto;
   background-color: #000000;
-  width: 340px;
-  min-height: 650px;
+  width: 100%;
+  max-width: 360px;
+  height: 820px;
   font-family: "Droid Sans Mono Slashed";
 }

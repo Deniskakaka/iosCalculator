@@ -1,5 +1,5 @@
 import React from 'react';
-import { check, mathematicalSymbolExpression } from "../functions";
+import {check, isPoint, mathematicalSymbolExpression} from "../functions";
 
 interface props {
     setExpression: (value: string | undefined) => void,
@@ -15,13 +15,9 @@ class Keyboard extends React.Component<props, any> {
         if (event.target.className.includes('number') && check(this.props.expression, event.target.innerHTML)) {
                 this.props.setExpression(event.target.innerHTML)
         }
-        if (event.target.className.includes('point')) {
-            if(this.props.expression === '0' || isNaN(+this.props.expression.slice(-1)) && this.props.expression !== '0.') {
-                this.props.setExpression('0.')
-            }
-            else if(this.props.expression !== '0.') {
-                this.props.setExpression('.')
-            }
+        if (event.target.className.includes('point') && !isNaN(+this.props.expression.slice(-1))) {
+            if (!isNaN(+this.props.expression.slice(-1)) && isPoint(this.props.expression)) this.props.setExpression('.')
+            if (this.props.expression === '0') this.props.setExpression('0.')
         }
         if (event.target.className.includes('plus-minus') && !isNaN(+this.props.expression)) {
             this.props.setExpression('plus-minus')
@@ -45,9 +41,7 @@ class Keyboard extends React.Component<props, any> {
     }
 
     changeResult = (event: any): void | null => {
-        if (event.target.className === 'keyboard-right-section') {
-            return null
-        }
+        if (event.target.className === 'keyboard-right-section') return null
         if(event.target.className.includes('equal')) {
             this.props.setExpression('equal')
         }
